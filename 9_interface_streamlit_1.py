@@ -10,12 +10,8 @@ with zipfile.ZipFile("export_simplifie6.zip", 'r') as zip_ref:
 #on ouvre le fichier excel, parse_dates =[0] indique à Python que la première colonne est une colonne de dates
 fichier = "export_simplifie6.csv"
 @st.cache_data
-def charger_dataframe():
-    df = pd.read_csv(fichier,parse_dates= [0])
-    return df
+df = pd.read_csv(fichier,parse_dates= [0])
 
-
-df = charger_dataframe()
 
 #on crée un tableau avec les noms des colonnes sur la première ligne
 nom_colonnes = df.head(1)
@@ -163,6 +159,7 @@ st.plotly_chart(fig, use_container_width=True)
 #fig = px.line(df_filtered,x=df_filtered.index,y= entete,title=f"{colonne_choisie} en fonction du temps",labels={entete: infos_variables[entete][1]},range_y=[infos_variables[entete][2],infos_variables[entete][3]])
 
 #st.plotly_chart(fig,use_container_width=True)
+
 
 
 
