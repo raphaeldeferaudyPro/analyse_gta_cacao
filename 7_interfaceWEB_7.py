@@ -2,10 +2,10 @@
 ##permet un affichage web comme la version 6 + import d'un format csv et non excel ce qui est beaucoup plus rapide
 
 #on importe les bibliothèques
+import plotly.graph_objs as go
 import streamlit as st
 import pandas as pd
-import plotly.express as px
-import plotly.graph_objs as go
+
 
 #on ouvre le fichier excel, parse_dates =[0] indique à Python que la première colonne est une colonne de dates
 fichier = "export_simplifie7.csv"
@@ -163,6 +163,7 @@ st.plotly_chart(fig, use_container_width=True)
 #fig = px.line(df_filtered,x=df_filtered.index,y= entete,title=f"{colonne_choisie} en fonction du temps",labels={entete: infos_variables[entete][1]},range_y=[infos_variables[entete][2],infos_variables[entete][3]])
 
 #st.plotly_chart(fig,use_container_width=True)
+
 
 
 
