@@ -156,12 +156,19 @@ fig.update_layout(
     margin=dict(l=50, r=50, t=60, b=40)
 )
 
+#Ajout d'un curseur de précision
+fig.update_layout(hovermode="x unified")  # ou "closest", "y", "x"
+
+fig.update_xaxes(showspikes=True, spikecolor="gray", spikethickness=1)
+fig.update_yaxes(showspikes=True, spikecolor="gray", spikethickness=1)
+
 # Affichage du graphique dans Streamlit
 st.plotly_chart(fig, use_container_width=True)
 
 #fig = px.line(df_filtered,x=df_filtered.index,y= entete,title=f"{colonne_choisie} en fonction du temps",labels={entete: infos_variables[entete][1]},range_y=[infos_variables[entete][2],infos_variables[entete][3]])
 
 #st.plotly_chart(fig,use_container_width=True)
+
 
 
 
